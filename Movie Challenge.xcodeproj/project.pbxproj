@@ -3,29 +3,43 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		11C9E4442678F89E00A1657C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C9E4432678F89E00A1657C /* AppDelegate.swift */; };
 		11C9E4462678F89E00A1657C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C9E4452678F89E00A1657C /* SceneDelegate.swift */; };
-		11C9E4482678F89E00A1657C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C9E4472678F89E00A1657C /* ViewController.swift */; };
+		11C9E4482678F89E00A1657C /* MainScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C9E4472678F89E00A1657C /* MainScreenViewController.swift */; };
 		11C9E44B2678F89E00A1657C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11C9E4492678F89E00A1657C /* Main.storyboard */; };
 		11C9E44E2678F89E00A1657C /* Movie_Challenge.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 11C9E44C2678F89E00A1657C /* Movie_Challenge.xcdatamodeld */; };
 		11C9E4502678F8A100A1657C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11C9E44F2678F8A100A1657C /* Assets.xcassets */; };
 		11C9E4532678F8A100A1657C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11C9E4512678F8A100A1657C /* LaunchScreen.storyboard */; };
+		11C9E4732678FB8400A1657C /* MoviesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C9E4722678FB8400A1657C /* MoviesModel.swift */; };
+		11C9E4772678FBFD00A1657C /* PopularMoviesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C9E4762678FBFD00A1657C /* PopularMoviesService.swift */; };
+		11C9E4842679043E00A1657C /* PopularMovieCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C9E4822679043E00A1657C /* PopularMovieCells.swift */; };
+		11C9E4852679043E00A1657C /* PopularMovieCells.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11C9E4832679043E00A1657C /* PopularMovieCells.xib */; };
+		11C9E4892679044E00A1657C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C9E4882679044E00A1657C /* Constants.swift */; };
+		98015A6E213B8FC2015EF17D /* Pods_Movie_Challenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA653DABED01E44549E85316 /* Pods_Movie_Challenge.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		11C9E4402678F89E00A1657C /* Movie Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Movie Challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		11C9E4432678F89E00A1657C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		11C9E4452678F89E00A1657C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		11C9E4472678F89E00A1657C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		11C9E4472678F89E00A1657C /* MainScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewController.swift; sourceTree = "<group>"; };
 		11C9E44A2678F89E00A1657C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		11C9E44D2678F89E00A1657C /* Movie_Challenge.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Movie_Challenge.xcdatamodel; sourceTree = "<group>"; };
 		11C9E44F2678F8A100A1657C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		11C9E4522678F8A100A1657C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		11C9E4542678F8A100A1657C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		11C9E4722678FB8400A1657C /* MoviesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesModel.swift; sourceTree = "<group>"; };
+		11C9E4762678FBFD00A1657C /* PopularMoviesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularMoviesService.swift; sourceTree = "<group>"; };
+		11C9E4822679043E00A1657C /* PopularMovieCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularMovieCells.swift; sourceTree = "<group>"; };
+		11C9E4832679043E00A1657C /* PopularMovieCells.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopularMovieCells.xib; sourceTree = "<group>"; };
+		11C9E4882679044E00A1657C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		9BD911C41BE5E9F7679007FB /* Pods-Movie Challenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Movie Challenge.debug.xcconfig"; path = "Target Support Files/Pods-Movie Challenge/Pods-Movie Challenge.debug.xcconfig"; sourceTree = "<group>"; };
+		B654A8A3F60B4078C85802CC /* Pods-Movie Challenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Movie Challenge.release.xcconfig"; path = "Target Support Files/Pods-Movie Challenge/Pods-Movie Challenge.release.xcconfig"; sourceTree = "<group>"; };
+		BA653DABED01E44549E85316 /* Pods_Movie_Challenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Movie_Challenge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +47,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98015A6E213B8FC2015EF17D /* Pods_Movie_Challenge.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		109E2AA40A5E0E2C995DA230 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BA653DABED01E44549E85316 /* Pods_Movie_Challenge.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		11C9E4372678F89D00A1657C = {
 			isa = PBXGroup;
 			children = (
 				11C9E4422678F89E00A1657C /* Movie Challenge */,
 				11C9E4412678F89E00A1657C /* Products */,
+				F2850984F2F4CE2099BB0499 /* Pods */,
+				109E2AA40A5E0E2C995DA230 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,16 +83,78 @@
 		11C9E4422678F89E00A1657C /* Movie Challenge */ = {
 			isa = PBXGroup;
 			children = (
+				11C9E4712678FB5E00A1657C /* Model */,
+				11C9E47E267901FD00A1657C /* View */,
+				11C9E480267903E100A1657C /* Controller */,
+				11C9E47D267901CB00A1657C /* Supporting Files */,
+				11C9E4542678F8A100A1657C /* Info.plist */,
+			);
+			path = "Movie Challenge";
+			sourceTree = "<group>";
+		};
+		11C9E4712678FB5E00A1657C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				11C9E4752678FBE200A1657C /* Services */,
+				11C9E4722678FB8400A1657C /* MoviesModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		11C9E4752678FBE200A1657C /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				11C9E4762678FBFD00A1657C /* PopularMoviesService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		11C9E47D267901CB00A1657C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
 				11C9E4432678F89E00A1657C /* AppDelegate.swift */,
 				11C9E4452678F89E00A1657C /* SceneDelegate.swift */,
-				11C9E4472678F89E00A1657C /* ViewController.swift */,
+				11C9E44C2678F89E00A1657C /* Movie_Challenge.xcdatamodeld */,
+				11C9E4882679044E00A1657C /* Constants.swift */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		11C9E47E267901FD00A1657C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				11C9E481267903F400A1657C /* TableView */,
 				11C9E4492678F89E00A1657C /* Main.storyboard */,
 				11C9E44F2678F8A100A1657C /* Assets.xcassets */,
 				11C9E4512678F8A100A1657C /* LaunchScreen.storyboard */,
-				11C9E4542678F8A100A1657C /* Info.plist */,
-				11C9E44C2678F89E00A1657C /* Movie_Challenge.xcdatamodeld */,
 			);
-			path = "Movie Challenge";
+			path = View;
+			sourceTree = "<group>";
+		};
+		11C9E480267903E100A1657C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				11C9E4472678F89E00A1657C /* MainScreenViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		11C9E481267903F400A1657C /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				11C9E4822679043E00A1657C /* PopularMovieCells.swift */,
+				11C9E4832679043E00A1657C /* PopularMovieCells.xib */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
+		F2850984F2F4CE2099BB0499 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9BD911C41BE5E9F7679007FB /* Pods-Movie Challenge.debug.xcconfig */,
+				B654A8A3F60B4078C85802CC /* Pods-Movie Challenge.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -77,9 +164,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 11C9E4572678F8A100A1657C /* Build configuration list for PBXNativeTarget "Movie Challenge" */;
 			buildPhases = (
+				EEAAF202773F2C2A69028003 /* [CP] Check Pods Manifest.lock */,
 				11C9E43C2678F89D00A1657C /* Sources */,
 				11C9E43D2678F89D00A1657C /* Frameworks */,
 				11C9E43E2678F89D00A1657C /* Resources */,
+				DCBD45E39A4AAF9B514AF300 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -127,6 +216,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11C9E4852679043E00A1657C /* PopularMovieCells.xib in Resources */,
 				11C9E4532678F8A100A1657C /* LaunchScreen.storyboard in Resources */,
 				11C9E4502678F8A100A1657C /* Assets.xcassets in Resources */,
 				11C9E44B2678F89E00A1657C /* Main.storyboard in Resources */,
@@ -135,15 +225,61 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		DCBD45E39A4AAF9B514AF300 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Movie Challenge/Pods-Movie Challenge-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Movie Challenge/Pods-Movie Challenge-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Movie Challenge/Pods-Movie Challenge-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EEAAF202773F2C2A69028003 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Movie Challenge-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		11C9E43C2678F89D00A1657C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				11C9E4482678F89E00A1657C /* ViewController.swift in Sources */,
+				11C9E4732678FB8400A1657C /* MoviesModel.swift in Sources */,
+				11C9E4482678F89E00A1657C /* MainScreenViewController.swift in Sources */,
 				11C9E4442678F89E00A1657C /* AppDelegate.swift in Sources */,
 				11C9E44E2678F89E00A1657C /* Movie_Challenge.xcdatamodeld in Sources */,
+				11C9E4772678FBFD00A1657C /* PopularMoviesService.swift in Sources */,
 				11C9E4462678F89E00A1657C /* SceneDelegate.swift in Sources */,
+				11C9E4842679043E00A1657C /* PopularMovieCells.swift in Sources */,
+				11C9E4892679044E00A1657C /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,12 +423,14 @@
 		};
 		11C9E4582678F8A100A1657C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9BD911C41BE5E9F7679007FB /* Pods-Movie Challenge.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 89685536Y6;
 				INFOPLIST_FILE = "Movie Challenge/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -300,18 +438,20 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.umutsever.Movie-Challenge";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		11C9E4592678F8A100A1657C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B654A8A3F60B4078C85802CC /* Pods-Movie Challenge.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 89685536Y6;
 				INFOPLIST_FILE = "Movie Challenge/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -319,7 +459,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.umutsever.Movie-Challenge";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

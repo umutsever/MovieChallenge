@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main Screen View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="MainScreenViewController" customModule="Movie_Challenge" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="U30-G8-gvG">
+                                <rect key="frame" x="0.0" y="146" width="414" height="590"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search..." translatesAutoresizingMaskIntoConstraints="NO" id="sBY-WR-3zJ">
+                                <rect key="frame" x="0.0" y="25" width="414" height="56"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="barTintColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="snj-sG-w4p">
+                                <rect key="frame" x="188.66666666666666" y="349.66666666666669" width="37" height="37"/>
+                            </activityIndicatorView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="xBh-OZ-Pc7">
+                                <rect key="frame" x="20" y="93" width="374" height="32"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <segments>
+                                    <segment title="Movies"/>
+                                    <segment title="People"/>
+                                    <segment title="Genre"/>
+                                </segments>
+                            </segmentedControl>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="snj-sG-w4p" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="1Kb-lk-y6m"/>
+                            <constraint firstItem="sBY-WR-3zJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="9Vk-aL-4px"/>
+                            <constraint firstItem="U30-G8-gvG" firstAttribute="top" secondItem="xBh-OZ-Pc7" secondAttribute="bottom" constant="22" id="Kx2-kM-N6s"/>
+                            <constraint firstItem="snj-sG-w4p" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ndy-Oa-XdS"/>
+                            <constraint firstItem="U30-G8-gvG" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="TCo-Ne-gIm"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xBh-OZ-Pc7" secondAttribute="trailing" constant="20" id="WFY-eQ-yaX"/>
+                            <constraint firstItem="xBh-OZ-Pc7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Zuh-F3-K6T"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="U30-G8-gvG" secondAttribute="trailing" id="gdY-ih-ZJ6"/>
+                            <constraint firstItem="sBY-WR-3zJ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="mRV-fA-Ma9"/>
+                            <constraint firstItem="U30-G8-gvG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="nBX-ac-n1M"/>
+                            <constraint firstItem="sBY-WR-3zJ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="25" id="sMM-W2-UdX"/>
+                            <constraint firstItem="xBh-OZ-Pc7" firstAttribute="top" secondItem="sBY-WR-3zJ" secondAttribute="bottom" constant="12" id="xuP-Aj-lgj"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="spinner" destination="snj-sG-w4p" id="UrH-7r-3aM"/>
+                        <outlet property="tableView" destination="U30-G8-gvG" id="h3t-OY-Dso"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="61.956521739130437"/>
+        </scene>
+    </scenes>
+</document>
