@@ -11,4 +11,6 @@ import Foundation
 struct Constants {
     static let popularMovieCellIdentifier = "popularMovieCell"
     static let popularMovieCellClass = "PopularMovieCells"
+    static let goToMovieDetailScreen = "goToMovieDetailScreen"
+    static let backToMainScreen = "backToMainScreen"
 }
