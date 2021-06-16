@@ -17,6 +17,7 @@ class MovieDetailViewController: UIViewController {
     @IBOutlet weak var summaryText: UILabel!
     
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var videoCollectionView: UICollectionView!
     
     var firstIndexNumber = 0
     var secondIndexNumber = 10
@@ -27,14 +28,24 @@ class MovieDetailViewController: UIViewController {
         super.viewDidLoad()
         
         
-        collectionView.register(UINib(nibName: Constants.castCollectionViewCellClass, bundle: .main), forCellWithReuseIdentifier: Constants.castCollectionCell)
         
-        print("ok")
+        posterImage.layer.cornerRadius = 13
+        posterImage.layer.shadowRadius = 3.0
+        posterImage.layer.shadowColor = UIColor.black.cgColor
+        posterImage.layer.shadowOffset = CGSize(width: 0.5, height: 0.5)
+        posterImage.layer.shadowOpacity = 1
+        
+        
+        
+        collectionView.register(UINib(nibName: Constants.castCollectionViewCellClass, bundle: .main), forCellWithReuseIdentifier: Constants.castCollectionCell)
+      
+        
         collectionView.dataSource = self
         print(movieDetails[0].id, "ID")
         starRating.settings.fillMode = .precise
         prepareUI()
         getCredits()
+        getVideos()
     }
     
     
@@ -45,16 +56,25 @@ class MovieDetailViewController: UIViewController {
             if let credits = credits {
                 
                 for i in credits.cast where i.profile_path != nil {
-                   
                     self.selectedCast.append(SelectedCast(image: "https://image.tmdb.org/t/p/w92" + i.profile_path!, name: i.name))
                 }
-                
                 DispatchQueue.main.async {
                     self.collectionView.reloadData()
                 }
             }
         }
         
+        
+    }
+    
+    func getVideos() {
+        MovieVideoService.shared.getPopularMovies(videoID: "\(movieDetails[0].id)") { (videos) in
+            if let videos = videos {
+                for i in videos.results where i.site == "YouTube" {
+                    print(i)
+                }
+            }
+        }
         
     }
     
@@ -81,7 +101,13 @@ class MovieDetailViewController: UIViewController {
 
 extension MovieDetailViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return selectedCast.count
+        if collectionView == self.collectionView {
+            return selectedCast.count
+            
+        } else {
+            return 3
+        }
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

@@ -37,7 +37,7 @@ class MainScreenViewController: UIViewController {
         PopularMoviesService.shared.getPopularMovies { (movies) in
             if let movies = movies {
                 for i in self.firstIndexNumber...self.secondIndexNumber {
-                    self.mostPopularMovies.append((MostPopularMovieList(overview: movies.results[i].overview, posterImage:  "https://image.tmdb.org/t/p/w92" + movies.results[i].poster_path, title:  movies.results[i].title, id: movies.results[i].id, rating: movies.results[i].vote_average)))
+                    self.mostPopularMovies.append((MostPopularMovieList(overview: movies.results[i].overview, posterImage:  "https://image.tmdb.org/t/p/w185" + movies.results[i].poster_path, title:  movies.results[i].title, id: movies.results[i].id, rating: movies.results[i].vote_average)))
                     
                 }
                 DispatchQueue.main.async {
