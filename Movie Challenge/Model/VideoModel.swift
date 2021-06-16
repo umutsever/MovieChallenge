@@ -16,3 +16,8 @@ struct Result: Decodable {
     let key: String
     let site: String
 }
+
+struct VideoList {
+    let key: String
+    let site: String
+}

@@ -8,5 +8,6 @@ target 'Movie Challenge' do
   # Pods for Movie Challenge
 	pod 'SDWebImage', '~> 5.0'
 	pod 'Cosmos', '~> 23.0'
+	pod "youtube-ios-player-helper"
 
 end

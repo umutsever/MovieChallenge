@@ -202,16 +202,16 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="b2B-uJ-w7r">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="b2B-uJ-w7r">
                                 <rect key="frame" x="20" y="446" width="374" height="106"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="106" id="AMv-lE-pab"/>
                                     <constraint firstAttribute="width" constant="374" id="pVQ-M5-aMu"/>
                                 </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Ez5-pp-PLu">
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Ez5-pp-PLu">
                                     <size key="itemSize" width="128" height="128"/>
-                                    <size key="estimatedItemSize" width="50" height="370"/>
+                                    <size key="estimatedItemSize" width="185" height="105"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -255,7 +255,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="collectionView" destination="p4h-Jx-7wQ" id="hYw-8g-B8X"/>
+                        <outlet property="castCollectionView" destination="p4h-Jx-7wQ" id="hYw-8g-B8X"/>
                         <outlet property="movieTitle" destination="xU5-Vz-KgX" id="mej-1F-bVL"/>
                         <outlet property="posterImage" destination="i5u-zD-a15" id="L6e-81-WEe"/>
                         <outlet property="starRating" destination="I50-8S-RvX" id="6IY-yw-LUw"/>

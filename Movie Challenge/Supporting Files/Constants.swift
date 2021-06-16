@@ -13,6 +13,10 @@ struct Constants {
     static let popularMovieCellClass = "PopularMovieCells"
     static let goToMovieDetailScreen = "goToMovieDetailScreen"
     static let backToMainScreen = "backToMainScreen"
+    
     static let castCollectionViewCellClass = "CastCollectionViewCell"
     static let castCollectionCell = "castCollectionCell"
+    
+    static let videoCollectionViewCellClass = "VideoCollectionViewCell"
+    static let videoCollectionCell = "videoCollectionCell"
 }

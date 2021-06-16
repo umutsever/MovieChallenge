@@ -8,6 +8,7 @@
 import UIKit
 import Cosmos
 import SDWebImage
+import youtube_ios_player_helper
 
 class MovieDetailViewController: UIViewController {
 
@@ -16,12 +17,13 @@ class MovieDetailViewController: UIViewController {
     @IBOutlet weak var posterImage: UIImageView!
     @IBOutlet weak var summaryText: UILabel!
     
-    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var castCollectionView: UICollectionView!
     @IBOutlet weak var videoCollectionView: UICollectionView!
     
     var firstIndexNumber = 0
     var secondIndexNumber = 10
     
+    var videosList = [VideoList]()
     var selectedCast = [SelectedCast]()
     var movieDetails = [MostPopularMovieList]()
     override func viewDidLoad() {
@@ -37,10 +39,13 @@ class MovieDetailViewController: UIViewController {
         
         
         
-        collectionView.register(UINib(nibName: Constants.castCollectionViewCellClass, bundle: .main), forCellWithReuseIdentifier: Constants.castCollectionCell)
-      
+        castCollectionView.register(UINib(nibName: Constants.castCollectionViewCellClass, bundle: .main), forCellWithReuseIdentifier: Constants.castCollectionCell)
         
-        collectionView.dataSource = self
+        videoCollectionView.register(UINib(nibName: Constants.videoCollectionViewCellClass, bundle: .main), forCellWithReuseIdentifier: Constants.videoCollectionCell)
+      
+        videoCollectionView.dataSource = self
+        castCollectionView.dataSource = self
+        
         print(movieDetails[0].id, "ID")
         starRating.settings.fillMode = .precise
         prepareUI()
@@ -59,7 +64,7 @@ class MovieDetailViewController: UIViewController {
                     self.selectedCast.append(SelectedCast(image: "https://image.tmdb.org/t/p/w92" + i.profile_path!, name: i.name))
                 }
                 DispatchQueue.main.async {
-                    self.collectionView.reloadData()
+                    self.castCollectionView.reloadData()
                 }
             }
         }
@@ -71,7 +76,10 @@ class MovieDetailViewController: UIViewController {
         MovieVideoService.shared.getPopularMovies(videoID: "\(movieDetails[0].id)") { (videos) in
             if let videos = videos {
                 for i in videos.results where i.site == "YouTube" {
-                    print(i)
+                    self.videosList.append(VideoList(key: i.key, site: i.site))
+                }
+                DispatchQueue.main.async {
+                    self.videoCollectionView.reloadData()
                 }
             }
         }
@@ -100,23 +108,38 @@ class MovieDetailViewController: UIViewController {
 
 
 extension MovieDetailViewController: UICollectionViewDataSource {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if collectionView == self.collectionView {
-            return selectedCast.count
-            
-        } else {
-            return 3
-        }
         
+        switch collectionView {
+        case castCollectionView:
+            return selectedCast.count
+        case videoCollectionView:
+            return videosList.count
+        default:
+            fatalError("Invalid collectionView")
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.castCollectionCell, for: indexPath) as! CastCollectionViewCell
         
-        cell.castName.text = selectedCast[indexPath.row].name
-        cell.castImage.sd_setImage(with: URL(string: selectedCast[indexPath.row].image), placeholderImage: UIImage(named: "placeholder.png"))
+        switch collectionView {
         
-        return cell
+        case castCollectionView:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.castCollectionCell, for: indexPath) as! CastCollectionViewCell
+            cell.castName.text = selectedCast[indexPath.row].name
+            cell.castImage.sd_setImage(with: URL(string: selectedCast[indexPath.row].image), placeholderImage: UIImage(named: "placeholder.png"))
+            return cell
+            
+        case videoCollectionView:
+            let cell = videoCollectionView.dequeueReusableCell(withReuseIdentifier: Constants.videoCollectionCell, for: indexPath) as! VideoCollectionViewCell
+            cell.videoView.load(withVideoId: videosList[indexPath.row].key)
+            return cell
+            
+        default:
+            fatalError("Invalid collectionView")
+        }
+
     }
     
     
