@@ -22,6 +22,8 @@
 		11C9E4A42679EB9400A1657C /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C9E4A32679EB9400A1657C /* MovieDetailViewController.swift */; };
 		11C9E4A72679FA9E00A1657C /* MovieCreditService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C9E4A62679FA9E00A1657C /* MovieCreditService.swift */; };
 		11C9E4AA2679FAAF00A1657C /* CreditsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C9E4A92679FAAF00A1657C /* CreditsModel.swift */; };
+		11C9E4B4267A01B700A1657C /* CastCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C9E4B2267A01B700A1657C /* CastCollectionViewCell.swift */; };
+		11C9E4B5267A01B700A1657C /* CastCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11C9E4B3267A01B700A1657C /* CastCollectionViewCell.xib */; };
 		98015A6E213B8FC2015EF17D /* Pods_Movie_Challenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA653DABED01E44549E85316 /* Pods_Movie_Challenge.framework */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +45,8 @@
 		11C9E4A32679EB9400A1657C /* MovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
 		11C9E4A62679FA9E00A1657C /* MovieCreditService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCreditService.swift; sourceTree = "<group>"; };
 		11C9E4A92679FAAF00A1657C /* CreditsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsModel.swift; sourceTree = "<group>"; };
+		11C9E4B2267A01B700A1657C /* CastCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastCollectionViewCell.swift; sourceTree = "<group>"; };
+		11C9E4B3267A01B700A1657C /* CastCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CastCollectionViewCell.xib; sourceTree = "<group>"; };
 		9BD911C41BE5E9F7679007FB /* Pods-Movie Challenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Movie Challenge.debug.xcconfig"; path = "Target Support Files/Pods-Movie Challenge/Pods-Movie Challenge.debug.xcconfig"; sourceTree = "<group>"; };
 		B654A8A3F60B4078C85802CC /* Pods-Movie Challenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Movie Challenge.release.xcconfig"; path = "Target Support Files/Pods-Movie Challenge/Pods-Movie Challenge.release.xcconfig"; sourceTree = "<group>"; };
 		BA653DABED01E44549E85316 /* Pods_Movie_Challenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Movie_Challenge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -131,7 +135,8 @@
 		11C9E47E267901FD00A1657C /* View */ = {
 			isa = PBXGroup;
 			children = (
-				11C9E481267903F400A1657C /* TableView */,
+				11C9E4B0267A018500A1657C /* CollectionViews */,
+				11C9E481267903F400A1657C /* TableViews */,
 				11C9E4492678F89E00A1657C /* Main.storyboard */,
 				11C9E44F2678F8A100A1657C /* Assets.xcassets */,
 				11C9E4512678F8A100A1657C /* LaunchScreen.storyboard */,
@@ -148,13 +153,22 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		11C9E481267903F400A1657C /* TableView */ = {
+		11C9E481267903F400A1657C /* TableViews */ = {
 			isa = PBXGroup;
 			children = (
 				11C9E4822679043E00A1657C /* PopularMovieCells.swift */,
 				11C9E4832679043E00A1657C /* PopularMovieCells.xib */,
 			);
-			path = TableView;
+			path = TableViews;
+			sourceTree = "<group>";
+		};
+		11C9E4B0267A018500A1657C /* CollectionViews */ = {
+			isa = PBXGroup;
+			children = (
+				11C9E4B2267A01B700A1657C /* CastCollectionViewCell.swift */,
+				11C9E4B3267A01B700A1657C /* CastCollectionViewCell.xib */,
+			);
+			path = CollectionViews;
 			sourceTree = "<group>";
 		};
 		F2850984F2F4CE2099BB0499 /* Pods */ = {
@@ -225,6 +239,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11C9E4B5267A01B700A1657C /* CastCollectionViewCell.xib in Resources */,
 				11C9E4852679043E00A1657C /* PopularMovieCells.xib in Resources */,
 				11C9E4532678F8A100A1657C /* LaunchScreen.storyboard in Resources */,
 				11C9E4502678F8A100A1657C /* Assets.xcassets in Resources */,
@@ -290,6 +305,7 @@
 				11C9E4462678F89E00A1657C /* SceneDelegate.swift in Sources */,
 				11C9E4AA2679FAAF00A1657C /* CreditsModel.swift in Sources */,
 				11C9E4842679043E00A1657C /* PopularMovieCells.swift in Sources */,
+				11C9E4B4267A01B700A1657C /* CastCollectionViewCell.swift in Sources */,
 				11C9E4A42679EB9400A1657C /* MovieDetailViewController.swift in Sources */,
 				11C9E4892679044E00A1657C /* Constants.swift in Sources */,
 			);

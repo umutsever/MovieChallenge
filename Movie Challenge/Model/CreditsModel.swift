@@ -19,3 +19,9 @@ struct Casts: Decodable {
     let name: String
     let profile_path: String?
 }
+
+
+struct SelectedCast {
+    let image: String
+    let name: String
+}
