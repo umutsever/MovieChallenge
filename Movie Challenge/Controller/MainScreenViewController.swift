@@ -38,7 +38,7 @@ class MainScreenViewController: UIViewController {
         PopularMoviesService.shared.getPopularMovies { (movies) in
             if let movies = movies {
                 for i in self.firstIndexNumber...self.secondIndexNumber {
-                    self.mostPopularMovies.append((MostPopularMovieList(overview: movies.results[i].overview, posterImage:  movies.results[i].poster_path, title:  movies.results[i].title, id: movies.results[i].id)))
+                    self.mostPopularMovies.append((MostPopularMovieList(overview: movies.results[i].overview, posterImage:  movies.results[i].poster_path, title:  movies.results[i].title, id: movies.results[i].id, rating: movies.results[i].vote_average)))
                     
                 }
                 DispatchQueue.main.async {
@@ -79,7 +79,7 @@ extension MainScreenViewController: UITableViewDataSource {
 
 extension MainScreenViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(mostPopularMovies[indexPath.row].id)
+        print(mostPopularMovies[indexPath.row].rating)
     }
     
 }
