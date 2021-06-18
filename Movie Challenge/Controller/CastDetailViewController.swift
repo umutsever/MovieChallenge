@@ -21,25 +21,22 @@ class CastDetailViewController: UIViewController {
         
         
         creditsCollection.dataSource = self
-        
-        
         creditsCollection.register(UINib(nibName: Constants.castCollectionViewCellClass, bundle: .main), forCellWithReuseIdentifier: Constants.castCollectionCell)
         
+        prepareUI()
+        getCastCredits()
+        getCastBio()
+    }
+    
+    
+    //MARK: - Main Functions
+    func prepareUI() {
         castImage.layer.cornerRadius = 13
         castImage.layer.shadowRadius = 3.0
         castImage.layer.shadowColor = UIColor.black.cgColor
         castImage.layer.shadowOffset = CGSize(width: 0.5, height: 0.5)
         castImage.layer.shadowOpacity = 1
         
-        
-       prepareUI()
-       getCastCredits()
-        getCastBio()
-    }
-    
-    
-    
-    func prepareUI() {
         castImage.sd_setImage(with: URL(string: castDetails[0].image), placeholderImage: UIImage(named: "placeholder.png"))
         castName.text = castDetails[0].name
     }
@@ -57,7 +54,7 @@ class CastDetailViewController: UIViewController {
         }
     }
     
-
+    
     func getCastBio() {
         CastDetailService.shared.getCastBio(castID: "\(castDetails[0].id)") { (bio) in
             if let bio = bio {
@@ -66,17 +63,18 @@ class CastDetailViewController: UIViewController {
                 }
                 
             }
-           
+            
         }
     }
-    
+    //MARK: - Segue
     @IBAction func backButton(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
     }
     
-
+    
 }
 
+//MARK: - CollectionView Datasource
 extension CastDetailViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return movieList.count

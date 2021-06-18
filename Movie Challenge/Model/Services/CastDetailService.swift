@@ -21,9 +21,9 @@ class CastDetailService {
                 completion(nil)
             } else if let data = data {
                 
-               
+                
                 let castArray = try? JSONDecoder().decode(castCredit.self, from: data)
-                    
+                
                 if let castArray = castArray {
                     completion(castArray)
                 }
@@ -45,9 +45,9 @@ class CastDetailService {
                 completion(nil)
             } else if let data = data {
                 
-               
+                
                 let castBio = try? JSONDecoder().decode(castBiography.self, from: data)
-                    
+                
                 if let castBio = castBio {
                     completion(castBio)
                 }

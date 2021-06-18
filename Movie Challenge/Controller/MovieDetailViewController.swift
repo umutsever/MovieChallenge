@@ -16,40 +16,27 @@ class MovieDetailViewController: UIViewController {
     @IBOutlet weak var movieTitle: UILabel!
     @IBOutlet weak var posterImage: UIImageView!
     @IBOutlet weak var summaryText: UILabel!
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
+    
     
     @IBOutlet weak var castCollectionView: UICollectionView!
     @IBOutlet weak var videoCollectionView: UICollectionView!
-    
-
-    
     
     var videosList = [VideoList]()
     var selectedCast = [SelectedCast]()
     var displayedCast = [SelectedCast]()
     var movieDetails = [MostPopularMovieList]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        
-        posterImage.layer.cornerRadius = 13
-        posterImage.layer.shadowRadius = 3.0
-        posterImage.layer.shadowColor = UIColor.black.cgColor
-        posterImage.layer.shadowOffset = CGSize(width: 0.5, height: 0.5)
-        posterImage.layer.shadowOpacity = 1
-        
-        
+
         
         castCollectionView.register(UINib(nibName: Constants.castCollectionViewCellClass, bundle: .main), forCellWithReuseIdentifier: Constants.castCollectionCell)
-        
         videoCollectionView.register(UINib(nibName: Constants.videoCollectionViewCellClass, bundle: .main), forCellWithReuseIdentifier: Constants.videoCollectionCell)
-      
         videoCollectionView.dataSource = self
         castCollectionView.dataSource = self
         castCollectionView.delegate = self
         
-        
-        starRating.settings.fillMode = .precise
         
         prepareUI()
         getCredits()
@@ -60,7 +47,7 @@ class MovieDetailViewController: UIViewController {
     
     
     
-    
+    //MARK: - Main Functions
     func getCredits() {
         if movieDetails.count > 0 {
             MovieCreditService.shared.getCreditsDetails(movieID: "\(movieDetails[0].id)") { (credits) in
@@ -80,6 +67,7 @@ class MovieDetailViewController: UIViewController {
     
     func getVideos() {
         if movieDetails.count > 0 {
+            self.spinner.startAnimating()
             MovieVideoService.shared.getPopularMovies(videoID: "\(movieDetails[0].id)") { (videos) in
                 if let videos = videos {
                     for i in videos.results where i.site == "YouTube" {
@@ -87,22 +75,24 @@ class MovieDetailViewController: UIViewController {
                     }
                     DispatchQueue.main.async {
                         self.videoCollectionView.reloadData()
+                        self.spinner.stopAnimating()
                     }
                 }
             }
         }
-       
-        
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == Constants.goToCastDetailScreen {
-            let secondVC = segue.destination as! CastDetailViewController
-            secondVC.castDetails = selectedCast
-        }
-    }
-
+    
     func prepareUI() {
+        
+        starRating.settings.fillMode = .precise
+        
+        //Poster Image Configuration
+        posterImage.layer.cornerRadius = 13
+        posterImage.layer.shadowRadius = 3.0
+        posterImage.layer.shadowColor = UIColor.black.cgColor
+        posterImage.layer.shadowOffset = CGSize(width: 0.5, height: 0.5)
+        posterImage.layer.shadowOpacity = 1
         
         if movieDetails.count != 0 {
             movieTitle.text = movieDetails[0].title
@@ -110,23 +100,26 @@ class MovieDetailViewController: UIViewController {
             summaryText.text = movieDetails[0].overview
             posterImage.sd_setImage(with: URL(string: movieDetails[0].posterImage), placeholderImage: UIImage(named: "placeholder.png"))
         }
-        
-        
     }
     
+    //MARK: - Segues
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == Constants.goToCastDetailScreen {
+            let secondVC = segue.destination as! CastDetailViewController
+            secondVC.castDetails = selectedCast
+        }
+    }
+
+
     @IBAction func backToMainButton(_ sender: UIButton) {
         performSegue(withIdentifier: Constants.backToMainScreen, sender: self)
     }
-    
-    
-    
-    
-    
-//VC Ends Here
+
 }
 
 
-extension MovieDetailViewController: UICollectionViewDataSource {
+//MARK: - CollectionView Delegate and Datasource
+extension MovieDetailViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
@@ -160,10 +153,6 @@ extension MovieDetailViewController: UICollectionViewDataSource {
         }
 
     }
-}
-
-
-extension MovieDetailViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         selectedCast.removeAll()
@@ -171,5 +160,6 @@ extension MovieDetailViewController: UICollectionViewDelegate {
         
         performSegue(withIdentifier: Constants.goToCastDetailScreen, sender: self)
     }
-    
 }
+
+

@@ -15,7 +15,7 @@ struct MoviesModel: Decodable {
 
 struct Results: Decodable {
     let overview: String
-    let poster_path: String
+    let poster_path: String?
     let title: String
     let id: Int
     let vote_average: Double

@@ -12,6 +12,11 @@ import Foundation
 
 struct CreditsModel: Decodable {
     let cast: [Casts]
+    
+}
+
+struct CastSearchModel: Decodable {
+    let results: [Casts]
 }
 
 struct Casts: Decodable {

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1122C963267C950200565C87 /* SearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1122C962267C950200565C87 /* SearchService.swift */; };
+		1122C970267CBBF200565C87 /* SearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1122C96F267CBBF200565C87 /* SearchModel.swift */; };
 		11C9E4442678F89E00A1657C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C9E4432678F89E00A1657C /* AppDelegate.swift */; };
 		11C9E4462678F89E00A1657C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C9E4452678F89E00A1657C /* SceneDelegate.swift */; };
 		11C9E4482678F89E00A1657C /* MainScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C9E4472678F89E00A1657C /* MainScreenViewController.swift */; };
@@ -35,6 +37,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1122C962267C950200565C87 /* SearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchService.swift; sourceTree = "<group>"; };
+		1122C96F267CBBF200565C87 /* SearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModel.swift; sourceTree = "<group>"; };
 		11C9E4402678F89E00A1657C /* Movie Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Movie Challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		11C9E4432678F89E00A1657C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		11C9E4452678F89E00A1657C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -86,6 +90,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		1122C97C267CE12500565C87 /* Stroyboards */ = {
+			isa = PBXGroup;
+			children = (
+				11C9E4512678F8A100A1657C /* LaunchScreen.storyboard */,
+				11C9E4492678F89E00A1657C /* Main.storyboard */,
+			);
+			path = Stroyboards;
+			sourceTree = "<group>";
+		};
 		11C9E4372678F89D00A1657C = {
 			isa = PBXGroup;
 			children = (
@@ -124,6 +137,7 @@
 				11C9E4A92679FAAF00A1657C /* CreditsModel.swift */,
 				11C9E4B8267A1BCD00A1657C /* VideoModel.swift */,
 				11C9E4CE267A4CFD00A1657C /* CastDetailModel.swift */,
+				1122C96F267CBBF200565C87 /* SearchModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -135,6 +149,7 @@
 				11C9E4A62679FA9E00A1657C /* MovieCreditService.swift */,
 				11C9E4BB267A1C3A00A1657C /* MovieVideoService.swift */,
 				11C9E4CB267A4CA400A1657C /* CastDetailService.swift */,
+				1122C962267C950200565C87 /* SearchService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -153,11 +168,10 @@
 		11C9E47E267901FD00A1657C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1122C97C267CE12500565C87 /* Stroyboards */,
 				11C9E4B0267A018500A1657C /* CollectionViews */,
 				11C9E481267903F400A1657C /* TableViews */,
-				11C9E4492678F89E00A1657C /* Main.storyboard */,
 				11C9E44F2678F8A100A1657C /* Assets.xcassets */,
-				11C9E4512678F8A100A1657C /* LaunchScreen.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -321,6 +335,7 @@
 				11C9E4732678FB8400A1657C /* MoviesModel.swift in Sources */,
 				11C9E4482678F89E00A1657C /* MainScreenViewController.swift in Sources */,
 				11C9E4442678F89E00A1657C /* AppDelegate.swift in Sources */,
+				1122C970267CBBF200565C87 /* SearchModel.swift in Sources */,
 				11C9E4C0267A209B00A1657C /* VideoCollectionViewCell.swift in Sources */,
 				11C9E4A72679FA9E00A1657C /* MovieCreditService.swift in Sources */,
 				11C9E44E2678F89E00A1657C /* Movie_Challenge.xcdatamodeld in Sources */,
@@ -331,6 +346,7 @@
 				11C9E4AA2679FAAF00A1657C /* CreditsModel.swift in Sources */,
 				11C9E4CF267A4CFD00A1657C /* CastDetailModel.swift in Sources */,
 				11C9E4CC267A4CA400A1657C /* CastDetailService.swift in Sources */,
+				1122C963267C950200565C87 /* SearchService.swift in Sources */,
 				11C9E4B9267A1BCD00A1657C /* VideoModel.swift in Sources */,
 				11C9E4842679043E00A1657C /* PopularMovieCells.swift in Sources */,
 				11C9E4B4267A01B700A1657C /* CastCollectionViewCell.swift in Sources */,
