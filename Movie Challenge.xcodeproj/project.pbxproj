@@ -28,6 +28,9 @@
 		11C9E4BC267A1C3A00A1657C /* MovieVideoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C9E4BB267A1C3A00A1657C /* MovieVideoService.swift */; };
 		11C9E4C0267A209B00A1657C /* VideoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C9E4BE267A209B00A1657C /* VideoCollectionViewCell.swift */; };
 		11C9E4C1267A209B00A1657C /* VideoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11C9E4BF267A209B00A1657C /* VideoCollectionViewCell.xib */; };
+		11C9E4C9267A49A700A1657C /* CastDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C9E4C8267A49A700A1657C /* CastDetailViewController.swift */; };
+		11C9E4CC267A4CA400A1657C /* CastDetailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C9E4CB267A4CA400A1657C /* CastDetailService.swift */; };
+		11C9E4CF267A4CFD00A1657C /* CastDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C9E4CE267A4CFD00A1657C /* CastDetailModel.swift */; };
 		98015A6E213B8FC2015EF17D /* Pods_Movie_Challenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA653DABED01E44549E85316 /* Pods_Movie_Challenge.framework */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +58,9 @@
 		11C9E4BB267A1C3A00A1657C /* MovieVideoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieVideoService.swift; sourceTree = "<group>"; };
 		11C9E4BE267A209B00A1657C /* VideoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCollectionViewCell.swift; sourceTree = "<group>"; };
 		11C9E4BF267A209B00A1657C /* VideoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoCollectionViewCell.xib; sourceTree = "<group>"; };
+		11C9E4C8267A49A700A1657C /* CastDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastDetailViewController.swift; sourceTree = "<group>"; };
+		11C9E4CB267A4CA400A1657C /* CastDetailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastDetailService.swift; sourceTree = "<group>"; };
+		11C9E4CE267A4CFD00A1657C /* CastDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastDetailModel.swift; sourceTree = "<group>"; };
 		9BD911C41BE5E9F7679007FB /* Pods-Movie Challenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Movie Challenge.debug.xcconfig"; path = "Target Support Files/Pods-Movie Challenge/Pods-Movie Challenge.debug.xcconfig"; sourceTree = "<group>"; };
 		B654A8A3F60B4078C85802CC /* Pods-Movie Challenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Movie Challenge.release.xcconfig"; path = "Target Support Files/Pods-Movie Challenge/Pods-Movie Challenge.release.xcconfig"; sourceTree = "<group>"; };
 		BA653DABED01E44549E85316 /* Pods_Movie_Challenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Movie_Challenge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -117,6 +123,7 @@
 				11C9E4722678FB8400A1657C /* MoviesModel.swift */,
 				11C9E4A92679FAAF00A1657C /* CreditsModel.swift */,
 				11C9E4B8267A1BCD00A1657C /* VideoModel.swift */,
+				11C9E4CE267A4CFD00A1657C /* CastDetailModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -127,6 +134,7 @@
 				11C9E4762678FBFD00A1657C /* PopularMoviesService.swift */,
 				11C9E4A62679FA9E00A1657C /* MovieCreditService.swift */,
 				11C9E4BB267A1C3A00A1657C /* MovieVideoService.swift */,
+				11C9E4CB267A4CA400A1657C /* CastDetailService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -159,6 +167,7 @@
 			children = (
 				11C9E4472678F89E00A1657C /* MainScreenViewController.swift */,
 				11C9E4A32679EB9400A1657C /* MovieDetailViewController.swift */,
+				11C9E4C8267A49A700A1657C /* CastDetailViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -315,10 +324,13 @@
 				11C9E4C0267A209B00A1657C /* VideoCollectionViewCell.swift in Sources */,
 				11C9E4A72679FA9E00A1657C /* MovieCreditService.swift in Sources */,
 				11C9E44E2678F89E00A1657C /* Movie_Challenge.xcdatamodeld in Sources */,
+				11C9E4C9267A49A700A1657C /* CastDetailViewController.swift in Sources */,
 				11C9E4772678FBFD00A1657C /* PopularMoviesService.swift in Sources */,
 				11C9E4BC267A1C3A00A1657C /* MovieVideoService.swift in Sources */,
 				11C9E4462678F89E00A1657C /* SceneDelegate.swift in Sources */,
 				11C9E4AA2679FAAF00A1657C /* CreditsModel.swift in Sources */,
+				11C9E4CF267A4CFD00A1657C /* CastDetailModel.swift in Sources */,
+				11C9E4CC267A4CA400A1657C /* CastDetailService.swift in Sources */,
 				11C9E4B9267A1BCD00A1657C /* VideoModel.swift in Sources */,
 				11C9E4842679043E00A1657C /* PopularMovieCells.swift in Sources */,
 				11C9E4B4267A01B700A1657C /* CastCollectionViewCell.swift in Sources */,

@@ -24,4 +24,5 @@ struct Casts: Decodable {
 struct SelectedCast {
     let image: String
     let name: String
+    let id: Int
 }

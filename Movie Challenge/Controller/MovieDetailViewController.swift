@@ -20,11 +20,12 @@ class MovieDetailViewController: UIViewController {
     @IBOutlet weak var castCollectionView: UICollectionView!
     @IBOutlet weak var videoCollectionView: UICollectionView!
     
-    var firstIndexNumber = 0
-    var secondIndexNumber = 10
+
+    
     
     var videosList = [VideoList]()
     var selectedCast = [SelectedCast]()
+    var displayedCast = [SelectedCast]()
     var movieDetails = [MostPopularMovieList]()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,26 +46,31 @@ class MovieDetailViewController: UIViewController {
       
         videoCollectionView.dataSource = self
         castCollectionView.dataSource = self
+        castCollectionView.delegate = self
         
-        print(movieDetails[0].id, "ID")
+        
         starRating.settings.fillMode = .precise
+        
         prepareUI()
         getCredits()
         getVideos()
+        
     }
     
     
     
     
+    
     func getCredits() {
-        MovieCreditService.shared.getCreditsDetails(movieID: "\(movieDetails[0].id)") { (credits) in
-            if let credits = credits {
-                
-                for i in credits.cast where i.profile_path != nil {
-                    self.selectedCast.append(SelectedCast(image: "https://image.tmdb.org/t/p/w92" + i.profile_path!, name: i.name))
-                }
-                DispatchQueue.main.async {
-                    self.castCollectionView.reloadData()
+        if movieDetails.count > 0 {
+            MovieCreditService.shared.getCreditsDetails(movieID: "\(movieDetails[0].id)") { (credits) in
+                if let credits = credits {
+                    for i in credits.cast where i.profile_path != nil {
+                        self.displayedCast.append(SelectedCast(image: "https://image.tmdb.org/t/p/w185" + i.profile_path!, name: i.name, id: i.id))
+                    }
+                    DispatchQueue.main.async {
+                        self.castCollectionView.reloadData()
+                    }
                 }
             }
         }
@@ -73,25 +79,38 @@ class MovieDetailViewController: UIViewController {
     }
     
     func getVideos() {
-        MovieVideoService.shared.getPopularMovies(videoID: "\(movieDetails[0].id)") { (videos) in
-            if let videos = videos {
-                for i in videos.results where i.site == "YouTube" {
-                    self.videosList.append(VideoList(key: i.key, site: i.site))
-                }
-                DispatchQueue.main.async {
-                    self.videoCollectionView.reloadData()
+        if movieDetails.count > 0 {
+            MovieVideoService.shared.getPopularMovies(videoID: "\(movieDetails[0].id)") { (videos) in
+                if let videos = videos {
+                    for i in videos.results where i.site == "YouTube" {
+                        self.videosList.append(VideoList(key: i.key, site: i.site))
+                    }
+                    DispatchQueue.main.async {
+                        self.videoCollectionView.reloadData()
+                    }
                 }
             }
         }
+       
         
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == Constants.goToCastDetailScreen {
+            let secondVC = segue.destination as! CastDetailViewController
+            secondVC.castDetails = selectedCast
+        }
+    }
 
     func prepareUI() {
-        movieTitle.text = movieDetails[0].title
-        starRating.rating = movieDetails[0].rating
-        summaryText.text = movieDetails[0].overview
-        posterImage.sd_setImage(with: URL(string: movieDetails[0].posterImage), placeholderImage: UIImage(named: "placeholder.png"))
+        
+        if movieDetails.count != 0 {
+            movieTitle.text = movieDetails[0].title
+            starRating.rating = movieDetails[0].rating
+            summaryText.text = movieDetails[0].overview
+            posterImage.sd_setImage(with: URL(string: movieDetails[0].posterImage), placeholderImage: UIImage(named: "placeholder.png"))
+        }
+        
         
     }
     
@@ -113,7 +132,7 @@ extension MovieDetailViewController: UICollectionViewDataSource {
         
         switch collectionView {
         case castCollectionView:
-            return selectedCast.count
+            return displayedCast.count
         case videoCollectionView:
             return videosList.count
         default:
@@ -127,8 +146,8 @@ extension MovieDetailViewController: UICollectionViewDataSource {
         
         case castCollectionView:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.castCollectionCell, for: indexPath) as! CastCollectionViewCell
-            cell.castName.text = selectedCast[indexPath.row].name
-            cell.castImage.sd_setImage(with: URL(string: selectedCast[indexPath.row].image), placeholderImage: UIImage(named: "placeholder.png"))
+            cell.castName.text = displayedCast[indexPath.row].name
+            cell.castImage.sd_setImage(with: URL(string: displayedCast[indexPath.row].image), placeholderImage: UIImage(named: "placeholder.png"))
             return cell
             
         case videoCollectionView:
@@ -141,7 +160,16 @@ extension MovieDetailViewController: UICollectionViewDataSource {
         }
 
     }
+}
+
+
+extension MovieDetailViewController: UICollectionViewDelegate {
     
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        selectedCast.removeAll()
+        selectedCast.append(SelectedCast(image: displayedCast[indexPath.row].image, name: displayedCast[indexPath.row].name, id: displayedCast[indexPath.row].id))
+        
+        performSegue(withIdentifier: Constants.goToCastDetailScreen, sender: self)
+    }
     
 }
